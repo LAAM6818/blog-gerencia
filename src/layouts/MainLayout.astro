@@ -1,0 +1,94 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  siteName?: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  siteName = "Mi Sitio", 
+  description = "Explorando ideas y tecnología", 
+} = Astro.props as Props;
+
+const logoLetter = siteName.charAt(0).toUpperCase();
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title} | {siteName}</title>
+  <meta name="description" content={description}>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-900 flex flex-col min-h-screen">
+
+  <!-- NAVEGACIÓN -->
+  <header class="fixed w-full top-0 z-50 p-4">
+    <!-- El contenedor del header con bordes redondeados y transparencia -->
+    <div class="container mx-auto px-6 py-3 flex items-center justify-between bg-white/75 backdrop-blur-md border border-white/20 shadow-sm rounded-2xl">
+      
+      <!-- LADO IZQUIERDO: Logo -->
+      <div class="flex-1 flex items-center">
+        <a href="/" class="group flex items-center space-x-2">
+          <div class="w-9 h-9 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all">
+             <span class="text-white font-bold text-lg">{logoLetter}</span>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-gray-900 hidden sm:block">
+            {siteName}
+          </span>
+        </a>
+      </div>
+      
+      <!-- CENTRO: Enlaces de Navegación -->
+      <nav class="flex items-center space-x-8 text-sm font-medium text-gray-600">
+        <a href="/" class="hover:text-indigo-600 transition-colors">Inicio</a>
+        <a href="/articulos" class="hover:text-indigo-600 transition-colors">Artículos</a>
+        <a href="/acerca" class="hover:text-indigo-600 transition-colors">Acerca</a>
+      </nav>
+
+      <!-- LADO DERECHO: Espaciador (mantiene los links centrados) -->
+      <div class="flex-1 hidden md:block"></div>
+
+      <!-- Menú Hamburguesa solo para móviles pequeños -->
+      <div class="md:hidden flex flex-1 justify-end">
+        <button class="text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-28">
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200 mt-auto">
+    <div class="container mx-auto px-4 py-10 text-center md:text-left">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center space-x-2">
+          <span class="font-bold text-gray-900">{siteName}</span>
+          <span class="text-gray-300">|</span>
+          <p class="text-gray-500 text-sm">© {new Date().getFullYear()}</p>
+        </div>
+        <nav class="flex space-x-6 text-sm text-gray-500">
+      
+          <a href="#" class="hover:text-indigo-600">GitHub</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
