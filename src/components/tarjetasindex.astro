@@ -5,10 +5,10 @@ interface Props {
   date: string;
   url: string;
   image: string;
-  category?: string; // Añadimos categoría opcional
+  // Añadimos categoría opcional
 }
 
-const { title, description, date, url, image, category = "Blog" } = Astro.props;
+const { title, description, date, url, image,  } = Astro.props;
 ---
 
 <article class="group relative bg-white rounded-2xl isolate flex flex-col hover:-translate-y-2 transition-all duration-500 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden">
@@ -16,9 +16,6 @@ const { title, description, date, url, image, category = "Blog" } = Astro.props;
   <!-- Contenedor de Imagen -->
   <div class="relative overflow-hidden aspect-16/10">
     <!-- Badge de Categoría -->
-    <span class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md text-indigo-700 text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-sm">
-      {category}
-    </span>
     
     <img 
       src={image} 
@@ -35,7 +32,7 @@ const { title, description, date, url, image, category = "Blog" } = Astro.props;
     <div class="flex items-center gap-3 mb-3">
       <time class="text-[11px] font-medium text-gray-500 uppercase tracking-wider">{date}</time>
       <span class="w-1 h-1 rounded-full bg-gray-300"></span>
-      <span class="text-[11px] font-medium text-gray-500 uppercase tracking-wider">5 min lectura</span>
+     
     </div>
 
     <!-- Título -->

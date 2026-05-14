@@ -1,12 +1,12 @@
 ---
 title: "Gestión de Innovación y Transformación Tecnológica"
 description: "Entiende cómo las organizaciones adoptan nuevas tecnologías, gestionan el cambio y se adaptan a tendencias como la inteligencia artificial y el cloud computing."
-pubDate: 2026-05-13
-banner: "blog/Bombilla.webp"
+pubDate: 2026-05-14
+banner: "/blog/Bombilla.webp"
 ---
 
 
-## Introducción
+
 
 La tecnología no se detiene. Lo que hoy es innovador, mañana puede ser obsoleto. Por eso, las organizaciones necesitan una **gestión proactiva de la innovación y la transformación tecnológica** para mantenerse competitivas. Este post explora cómo evaluar nuevas tecnologías, gestionar el cambio organizacional y aprovechar tendencias como la inteligencia artificial, el cloud computing y el IoT.
 

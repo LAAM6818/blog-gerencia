@@ -30,35 +30,34 @@ const logoLetter = siteName.charAt(0).toUpperCase();
 <body class="bg-gray-50 font-sans antialiased text-gray-900 flex flex-col min-h-screen">
 
  
-  <!-- NAVEGACIÓN MEJORADA -->
   <header class="fixed w-full top-0 z-50 p-6">
-    <div class="container mx-auto px-6 py-3 flex items-center justify-between bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl">
-      
-      <!-- LADO IZQUIERDO: Logo -->
-      <div class="flex-1 flex items-center">
-        <a href="/" class="group flex items-center space-x-3">
-          <div class="w-11 h-11 bg-linear-to-tr from-indigo-600 to-purple-500 rounded-xl flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] transition-all duration-300">
-             <span class="text-white font-bold text-2xl">{logoLetter}</span>
-          </div>
-          <span class="text-xl font-bold tracking-tight text-white hidden sm:block">
-            {siteName}
-          </span>
-        </a>
-      </div>
-      
-      <!-- CENTRO: Enlaces de Navegación (Ahora siempre visibles) -->
-      <nav class="flex items-center space-x-6 sm:space-x-10 text-sm font-medium text-gray-300">
-       <a href="/" class="hover:text-white transition-colors">Inicio</a>
-       <a href="/articulos/" class="hover:text-white transition-colors">Artículos</a>
-       <a href="/acerca/" class="hover:text-white transition-colors">Acerca de</a>
-      
-      </nav>
-      <!-- LADO DERECHO: Espaciador (Mantiene el equilibrio visual) -->
-      <div class="flex-1 flex justify-end"></div>
-
+  <!-- Se cambió 'bg-white/5' por 'bg-[#080c16]/70' (el color de tu imagen con 70% de opacidad) -->
+  <div class="container mx-auto px-6 py-3 flex items-center justify-between bg-[#080c16]/70 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl">
+    
+    <!-- LADO IZQUIERDO: Logo -->
+    <div class="flex-1 flex items-center">
+      <a href="/" class="group flex items-center space-x-3">
+        <div class="w-11 h-11 bg-linear-to-tr from-indigo-600 to-purple-500 rounded-xl flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] transition-all duration-300">
+            <span class="text-white font-bold text-2xl">{logoLetter}</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white hidden sm:block">
+          {siteName}
+        </span>
+      </a>
     </div>
-  </header>
+    
+    <!-- CENTRO: Enlaces de Navegación -->
+    <nav class="flex items-center space-x-6 sm:space-x-10 text-sm font-medium text-gray-300">
+      <a href="/" class="hover:text-white transition-colors">Inicio</a>
+      <a href="/articulos/" class="hover:text-white transition-colors">Artículos</a>
+      <a href="/acerca/" class="hover:text-white transition-colors">Acerca de</a>
+    </nav>
 
+    <!-- LADO DERECHO -->
+    <div class="flex-1 flex justify-end"></div>
+
+  </div>
+</header>
   <!-- CONTENIDO -->
   <main class="grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-32">
     <slot />
@@ -80,8 +79,8 @@ const logoLetter = siteName.charAt(0).toUpperCase();
             <h5 class="font-bold text-white uppercase tracking-widest mb-5">Navegación</h5>
             <ul class="space-y-3">
               <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="/articulos/articulos" class="hover:text-white transition-colors">Artículos</a></li>
-              <li><a href="/acercade" class="hover:text-white transition-colors">Acerca de</a></li>
+              <li><a href="/articulos" class="hover:text-white transition-colors">Artículos</a></li>
+              <li><a href="/acerca" class="hover:text-white transition-colors">Acerca de</a></li>
             </ul>
           </div>
 
@@ -111,7 +110,7 @@ const logoLetter = siteName.charAt(0).toUpperCase();
 
       <!-- Línea divisoria y Copyright -->
       <div class="border-t border-[#1a202c] pt-8 text-center text-[#4a5568]">
-        <p>© {new Date().getFullYear()} Gerencia de Equipos y Tecnologías.</p>
+        <p>© {new Date().getFullYear()} Administración de Recursos Informáticos y Tecnológicos.</p>
       </div>
 
     </div>

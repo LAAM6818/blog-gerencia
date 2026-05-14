@@ -17,33 +17,25 @@ function formatDate(date: Date): string {
 
 <MainLayout 
   title="Inicio" 
-  siteName="blogger" 
+  siteName="blog" 
   description="Exploramos la intersección entre el liderazgo humano y la infraestructura de vanguardia"
 >
   <!-- HERO SECTION -->
-  <section class="relative bg-[#0b1120] -mt-32 pt-48 pb-24 overflow-hidden left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen">
+ <section class="relative bg-[#0b1120] -mt-32 pt-48 pb-24 overflow-hidden left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-indigo-900/20 via-transparent to-transparent"></div>
-    
     <div class="container mx-auto px-6 relative z-10">
       <div class="max-w-4xl">
-        <!-- Badge de bienvenida opcional para dar un toque moderno -->
-        <span class="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-indigo-400 uppercase bg-indigo-400/10 rounded-full">
-          Tecnología & Liderazgo
-        </span>
-
         <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-8">
-          Gerencia de Equipos y Tecnologías: <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-500">Liderando la Transformación</span>
+          Administración de Recursos Informáticos y Tecnológicos
         </h1>
-
         <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10">
-          Exploramos cómo la infraestructura de vanguardia y el talento humano se unen para crear soluciones eficientes en el desarrollo de software moderno.
+          Estrategias y herramientas para maximizar la eficiencia y el valor de la infraestructura tecnológica.
         </p>
-
         <div class="flex flex-wrap gap-4">
-          <a href="#por-que-leer" class="px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"> 
+          <a href="#por-que-leer" class="px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20">
             Descubrir más
           </a>
-          <a href="#articulos" class="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold rounded-lg hover:bg-gray-800 transition-all"> 
+          <a href="#articulos" class="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold rounded-lg hover:bg-gray-800 transition-all">
             Explorar artículos
           </a>
         </div>
@@ -51,87 +43,85 @@ function formatDate(date: Date): string {
     </div>
   </section>
 
-  <section id="por-que-leer" class="py-24 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-            Más que solo código: <span class="text-indigo-600">una visión integral</span>
-          </h2>
-          <div class="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
-        </div>
+ <section id="por-que-leer" class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        
+        <div class="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+      </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-start">
-          <div class="space-y-6">
-            <p class="text-xl text-gray-700 leading-relaxed font-medium">
-              En la intersección de la ingeniería de sistemas y la gestión estratégica, surge un espacio crítico que pocos exploran a fondo.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Este blog nace de la necesidad de cerrar la brecha entre la **implementación técnica rigurosa** y el **liderazgo efectivo de equipos**. Aquí no solo encontrarás tutoriales sobre cómo configurar un servidor o diseñar una API con FastAPI; profundizaremos en el <em>porqué</em> detrás de cada decisión técnica y cómo estas afectan la productividad de un equipo de soporte o desarrollo.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Desde la optimización de hardware para estaciones de trabajo de alto rendimiento hasta el despliegue de arquitecturas modernas en la nube, cada artículo está diseñado para ser una herramienta práctica. Mi objetivo es que, al terminar de leer, no solo tengas una solución a un error de código, sino una nueva perspectiva sobre cómo escalar tecnologías y potenciar el talento humano.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8">Lo que encontrarás aquí:</h3>
-            
-            <ul class="space-y-6">
-              <li class="flex gap-4">
-                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-900">Arquitecturas Escalables</h4>
-                  <p class="text-sm text-gray-600">Guías detalladas sobre C#, Python y frameworks modernos, enfocadas en la mantenibilidad a largo plazo.</p>
-                </div>
-              </li>
-
-              <li class="flex gap-4">
-                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-900">Gestión de Equipos Técnicos</h4>
-                  <p class="text-sm text-gray-600">Lecciones sobre cómo organizar flujos de trabajo, material de soporte y metodologías que funcionan en el mundo real.</p>
-                </div>
-              </li>
-
-              <li class="flex gap-4">
-                <div class="shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-900">Optimización y Rendimiento</h4>
-                  <p class="text-sm text-gray-600">Desde la base de datos hasta el hardware del desarrollador; si se puede mejorar, aquí lo analizamos.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="mt-16 p-8 bg-indigo-900 rounded-2xl text-center">
-          <p class="text-indigo-100 text-lg italic">
-            "La tecnología es el motor, pero el liderazgo es el volante. Sin ambos, cualquier proyecto está destinado a perder el rumbo."
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-6">
+          <p class="text-xl text-gray-700 leading-relaxed font-medium">
+            Administrar recursos tecnológicos no es solo mantener sistemas encendidos; es maximizar la eficiencia operativa y el retorno de inversión.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Este espacio está diseñado para líderes técnicos y administradores de sistemas que buscan ir más allá del código. Aquí exploramos cómo la <strong>administración de recursos informáticos</strong> se convierte en el pilar que sostiene el crecimiento de cualquier organización moderna, uniendo la técnica con la visión de negocio.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Desde la optimización del ciclo de vida del hardware hasta el despliegue de soluciones en la nube de alto rendimiento, cada artículo ofrece estrategias prácticas. Mi objetivo es proporcionarte las herramientas necesarias para transformar la infraestructura tecnológica en un activo estratégico que potencie el talento humano y la productividad.
           </p>
         </div>
+
+        <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-900 mb-8">Ejes fundamentales:</h3>
+          
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <div class="shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900">Optimización de Activos</h4>
+                <p class="text-sm text-gray-600">Estrategias para maximizar el rendimiento del hardware y software, garantizando una infraestructura sólida y escalable.</p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <div class="shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900">Gobierno de TI y Liderazgo</h4>
+                <p class="text-sm text-gray-600">Metodologías para la gestión de equipos técnicos, flujos de trabajo eficientes y toma de decisiones basada en datos.</p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <div class="shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
+                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900">Continuidad y Eficiencia</h4>
+                <p class="text-sm text-gray-600">Análisis de arquitecturas cloud resilientes y de bajo costo operativo.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 p-8 bg-indigo-900 rounded-2xl text-center">
+        <p class="text-indigo-100 text-lg italic">
+          "La eficiencia tecnológica es el resultado de una administración consciente. No se trata de tener más recursos, sino de saber potenciar los que ya tenemos."
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   
   <div id="articulos" class="py-24 bg-[#f8f9fc]">
     <div class="container mx-auto px-6">
       <div class="flex justify-between items-end mb-12">
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-2">Publicaciones Recientes</h2>
-          <p class="text-gray-600">Explora las últimas guías y reflexiones sobre desarrollo y gestión.</p>
+          <p class="text-gray-600">Explora las últimas publicacines.</p>
         </div>
       </div>
 

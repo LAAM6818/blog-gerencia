@@ -5,3 +5,4 @@
 @theme {
   --font-lui: 'DM Sans Variable', sans-serif;
 }
+@plugin "@tailwindcss/typography";
