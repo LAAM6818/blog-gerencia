@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { 
-  title, 
+  title="Mi Blog",
   siteName = "Mi Sitio", 
   description = "Explorando ideas y tecnología", 
 } = Astro.props as Props;
@@ -29,64 +29,91 @@ const logoLetter = siteName.charAt(0).toUpperCase();
 
 <body class="bg-gray-50 font-sans antialiased text-gray-900 flex flex-col min-h-screen">
 
-  <!-- NAVEGACIÓN -->
-  <header class="fixed w-full top-0 z-50 p-4">
-    <!-- El contenedor del header con bordes redondeados y transparencia -->
-    <div class="container mx-auto px-6 py-3 flex items-center justify-between bg-white/75 backdrop-blur-md border border-white/20 shadow-sm rounded-2xl">
+ 
+  <!-- NAVEGACIÓN MEJORADA -->
+  <header class="fixed w-full top-0 z-50 p-6">
+    <div class="container mx-auto px-6 py-3 flex items-center justify-between bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl">
       
       <!-- LADO IZQUIERDO: Logo -->
       <div class="flex-1 flex items-center">
-        <a href="/" class="group flex items-center space-x-2">
-          <div class="w-9 h-9 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg flex items-center justify-center group-hover:shadow-lg transition-all">
-             <span class="text-white font-bold text-lg">{logoLetter}</span>
+        <a href="/" class="group flex items-center space-x-3">
+          <div class="w-11 h-11 bg-linear-to-tr from-indigo-600 to-purple-500 rounded-xl flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] transition-all duration-300">
+             <span class="text-white font-bold text-2xl">{logoLetter}</span>
           </div>
-          <span class="text-xl font-bold tracking-tight text-gray-900 hidden sm:block">
+          <span class="text-xl font-bold tracking-tight text-white hidden sm:block">
             {siteName}
           </span>
         </a>
       </div>
       
-      <!-- CENTRO: Enlaces de Navegación -->
-      <nav class="flex items-center space-x-8 text-sm font-medium text-gray-600">
-        <a href="/" class="hover:text-indigo-600 transition-colors">Inicio</a>
-        <a href="/articulos" class="hover:text-indigo-600 transition-colors">Artículos</a>
-        <a href="/acerca" class="hover:text-indigo-600 transition-colors">Acerca</a>
+      <!-- CENTRO: Enlaces de Navegación (Ahora siempre visibles) -->
+      <nav class="flex items-center space-x-6 sm:space-x-10 text-sm font-medium text-gray-300">
+       <a href="/" class="hover:text-white transition-colors">Inicio</a>
+       <a href="/articulos" class="hover:text-white transition-colors">Artículos</a>
+       <a href="/acerca" class="hover:text-white transition-colors">Acerca de</a>
+      
       </nav>
-
-      <!-- LADO DERECHO: Espaciador (mantiene los links centrados) -->
-      <div class="flex-1 hidden md:block"></div>
-
-      <!-- Menú Hamburguesa solo para móviles pequeños -->
-      <div class="md:hidden flex flex-1 justify-end">
-        <button class="text-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </button>
-      </div>
+      <!-- LADO DERECHO: Espaciador (Mantiene el equilibrio visual) -->
+      <div class="flex-1 flex justify-end"></div>
 
     </div>
   </header>
 
   <!-- CONTENIDO -->
-  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-28">
+  <main class="grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-32">
     <slot />
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-gray-200 mt-auto">
-    <div class="container mx-auto px-4 py-10 text-center md:text-left">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center space-x-2">
-          <span class="font-bold text-gray-900">{siteName}</span>
-          <span class="text-gray-300">|</span>
-          <p class="text-gray-500 text-sm">© {new Date().getFullYear()}</p>
-        </div>
-        <nav class="flex space-x-6 text-sm text-gray-500">
+  <!-- FOOTER MODIFICADO (Centrado) -->
+  <footer class="bg-[#0b1120] text-[#a0aec0] text-sm mt-auto">
+    <div class="container mx-auto px-4 py-12 md:py-16">
       
-          <a href="#" class="hover:text-indigo-600">GitHub</a>
-        </nav>
+      <!-- Contenedor principal con flex-col y items-center para centrar todo -->
+      <div class="flex flex-col items-center text-center space-y-12 mb-12">
+        
+        
+        <!-- Grid de enlaces centrado -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 w-full max-w-lg">
+          
+          <!-- Columna NAVEGACIÓN -->
+          <div>
+            <h5 class="font-bold text-white uppercase tracking-widest mb-5">Navegación</h5>
+            <ul class="space-y-3">
+              <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
+              <li><a href="/articulos" class="hover:text-white transition-colors">Artículos</a></li>
+              <li><a href="/acerca" class="hover:text-white transition-colors">Acerca de</a></li>
+            </ul>
+          </div>
+
+         <!-- Columna CONTACTO (Iconos GitHub y Gmail) -->
+          <div>
+            <h5 class="font-bold text-white uppercase tracking-widest mb-5">Contacto</h5>
+            <div class="flex justify-center items-center space-x-6 text-2xl">
+              <!-- Icono GitHub -->
+              <a href="https://github.com/LAAM6818/blog-gerencia" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub">
+                <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <!-- Icono Gmail (M) -->
+             <a 
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=luisalvarado.6818@gmail.com&su=Contacto desde el Blog" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="hover:text-white transition-colors" 
+               aria-label="Enviar correo por Gmail"
+             >
+               <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
       </div>
+
+      <!-- Línea divisoria y Copyright -->
+      <div class="border-t border-[#1a202c] pt-8 text-center text-[#4a5568]">
+        <p>© {new Date().getFullYear()} Gerencia de Equipos y Tecnologías.</p>
+      </div>
+
     </div>
   </footer>
 

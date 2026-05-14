@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  url: string;
+  image: string;
+  category?: string; // Añadimos categoría opcional
+}
+
+const { title, description, date, url, image, category = "Blog" } = Astro.props;
+---
+
+<article class="group relative bg-white rounded-2xl isolate flex flex-col hover:-translate-y-2 transition-all duration-500 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] overflow-hidden">
+  
+  <!-- Contenedor de Imagen -->
+  <div class="relative overflow-hidden aspect-16/10">
+    <!-- Badge de Categoría -->
+    <span class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md text-indigo-700 text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-sm">
+      {category}
+    </span>
+    
+    <img 
+      src={image} 
+      alt={title} 
+      class="object-cover w-full h-full scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
+    />
+    
+    <!-- Overlay sutil -->
+    <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  </div>
+
+  <div class="p-6 flex flex-col grow">
+    <!-- Meta info -->
+    <div class="flex items-center gap-3 mb-3">
+      <time class="text-[11px] font-medium text-gray-500 uppercase tracking-wider">{date}</time>
+      <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+      <span class="text-[11px] font-medium text-gray-500 uppercase tracking-wider">5 min lectura</span>
+    </div>
+
+    <!-- Título -->
+    <h3 class="text-xl font-extrabold text-gray-900 leading-tight mb-3 group-hover:text-indigo-600 transition-colors">
+      <a href={url} class="after:absolute after:inset-0">
+        {title}
+      </a>
+    </h3>
+
+    <!-- Descripción -->
+    <p class="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-6">
+      {description}
+    </p>
+
+    <!-- Footer de la tarjeta -->
+    <div class="mt-auto pt-5 border-t border-gray-100 flex items-center justify-between">
+      <span class="text-indigo-600 font-bold text-xs inline-flex items-center group-hover:gap-2 transition-all">
+        Leer más 
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </span>
+    </div>
+  </div>
+</article>
