@@ -1,7 +1,7 @@
 ---
 title: "Optimización de infraestructura crítica: Claves para maximizar rendimiento y seguridad"
 description: "Guía técnica sobre mantenimiento proactivo de hardware (batería, RAM) y seguridad en la disposición final de activos ITAM para evitar fugas de datos en estaciones de trabajo pesadas."
-pubDate: 2026-05-15
+pubDate: 2026-05-14
 banner: "/blog/optimizacion.png"
 tags: ["mantenimiento proactivo", "ITAM", "seguridad hardware", "gestión de activos", "disposición final"]
 format: "antes-despues"
