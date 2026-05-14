@@ -99,5 +99,3 @@ Si una organización hoy innova por casualidad, difícilmente obtendrá resultad
 - Harvard Business Review. (2023). *Why Innovation Fails*.
 
 ---
-
-**Siguiente lectura sugerida:** [Un problema real: ¿dónde están tus 15 portátiles perdidos?](#) → (ITAM)

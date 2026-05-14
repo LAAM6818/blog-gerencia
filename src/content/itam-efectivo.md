@@ -150,4 +150,3 @@ No se trata de perfección desde el primer día, sino de mejora continua: cada a
 
 ---
 
-**Siguiente lectura sugerida:** [Fundamentos de la Gestión de Innovación Tecnológica](#) → (Innovación)
