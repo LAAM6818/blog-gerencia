@@ -1,6 +1,18 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import Tarjetas from '../components/tarjetasindex.astro'; 
+import Tarjetas from '../components/tarjetasindex.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const latestPosts = posts.slice(0, 3);
+
+function formatDate(date: Date): string {
+  const day = date.getDate();
+  const month = date.toLocaleDateString('es-ES', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day} ${month.charAt(0).toUpperCase() + month.slice(1)}, ${year}`;
+}
 ---
 
 <MainLayout 
@@ -39,7 +51,6 @@ import Tarjetas from '../components/tarjetasindex.astro';
     </div>
   </section>
 
-  <!-- NUEVA SECCIÓN: ¿POR QUÉ LEER ESTE BLOG? (EXTENDIDA) -->
   <section id="por-que-leer" class="py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="max-w-5xl mx-auto">
@@ -92,7 +103,7 @@ import Tarjetas from '../components/tarjetasindex.astro';
               </li>
 
               <li class="flex gap-4">
-                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
+                <div class="shrink-0 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center mt-1">
                   <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                   </svg>
@@ -114,7 +125,7 @@ import Tarjetas from '../components/tarjetasindex.astro';
       </div>
     </div>
   </section>
-  <!-- SECCIÓN DE ARTÍCULOS -->
+  
   <div id="articulos" class="py-24 bg-[#f8f9fc]">
     <div class="container mx-auto px-6">
       <div class="flex justify-between items-end mb-12">
@@ -125,29 +136,15 @@ import Tarjetas from '../components/tarjetasindex.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Tarjetas
-          title="Cómo estructurar un blog con Astro"
-          description="Aprende a organizar tus carpetas y componentes para un proyecto escalable y rápido."
-          date="14 Mayo, 2026"
-          url="/posts/mi-primer-post"
-          image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
-        />
-
-        <Tarjetas
-          title="Arquitectura de Microservicios con FastAPI"
-          description="Una guía completa sobre cómo diseñar sistemas distribuidos eficientes usando Python."
-          date="10 Mayo, 2026"
-          url="/posts/fastapi-guide"
-          image="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
-        />
-
-        <Tarjetas
-          title="Optimización de Hardware para Desarrolladores"
-          description="Consejos prácticos para elegir y configurar tu estación de trabajo ideal."
-          date="5 Mayo, 2026"
-          url="/posts/hardware-optimization"
-          image="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-        />
+        {latestPosts.map(post => (
+          <Tarjetas
+            title={post.data.title}
+            description={post.data.description}
+            date={formatDate(post.data.pubDate)}
+            url={`/articulos/${post.id}`}
+            image={post.data.banner || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97"}
+          />
+        ))}
       </div>
     </div>
   </div>

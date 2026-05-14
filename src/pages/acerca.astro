@@ -1,0 +1,74 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+  title="Acerca de" 
+  siteName="blogger" 
+  description="Conoce más sobre el autor de este blog."
+>
+  <section class="pt-32 pb-24 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+      
+      <!-- Título principal -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          Acerca de <span class="text-indigo-600">mí</span>
+        </h1>
+        <div class="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Contenido editable: PRESENTACIÓN -->
+      <div class="prose prose-lg lg:prose-xl mx-auto max-w-none 
+                  prose-headings:text-gray-900 
+                  prose-p:text-gray-700 prose-p:leading-relaxed
+                  prose-strong:text-gray-900">
+        
+        <p>
+          ¡Hola! Soy <strong>[Tu Nombre]</strong>, un apasionado por la tecnología, 
+          el liderazgo de equipos y la creación de soluciones que realmente marcan la diferencia. 
+          Con más de <strong>[X] años de experiencia</strong> en el mundo del desarrollo de software 
+          y la gestión de infraestructura, he aprendido que la verdadera innovación surge cuando 
+          combinamos <strong>talento humano</strong> con <strong>tecnología bien aplicada</strong>.
+        </p>
+
+        <h2>Mi trayectoria</h2>
+        <p>
+          Comencé mi carrera como desarrollador backend, trabajando con tecnologías como 
+          <strong>C# y Python</strong>. Con el tiempo, me fui involucrando en la arquitectura de 
+          sistemas, la optimización de hardware y, sobre todo, en la <strong>gestión de equipos 
+          técnicos</strong>. He tenido la suerte de liderar áreas de soporte y desarrollo, donde 
+          aprendí que la comunicación y la empatía son tan importantes como el código limpio.
+        </p>
+        <p>
+          En la actualidad, me dedico a [breve descripción de tu rol actual: consultor, líder técnico, 
+          docente, etc.]. Este blog nace como un espacio para compartir lecciones, guías prácticas y 
+          reflexiones sobre todo lo que implica construir software de calidad mientras se cuida a las 
+          personas que lo hacen posible.
+        </p>
+
+        <h2>Áreas de experiencia</h2>
+        <ul>
+          <li><strong>Arquitectura de software escalable:</strong> Desde monolitos bien diseñados hasta microservicios.</li>
+          <li><strong>Optimización de rendimiento:</strong> Hardware, bases de datos y pipelines de CI/CD.</li>
+          <li><strong>Gestión de equipos técnicos:</strong> Metodologías ágiles, flujos de trabajo y cultura colaborativa.</li>
+          <li><strong>Automatización y DevOps:</strong> Infraestructura como código, monitoreo y despliegue continuo.</li>
+        </ul>
+
+        <h2>¿Por qué escribo?</h2>
+        <p>
+          Creo firmemente que el conocimiento compartido es el que más crece. Cada artículo es una 
+          oportunidad para ayudar a otros profesionales a sortear los mismos obstáculos que yo enfrenté, 
+          y a la vez, seguir aprendiendo de la comunidad. Si algo de lo que lees aquí te resulta útil, 
+          me doy por más que satisfecho.
+        </p>
+        
+        <p class="text-lg font-medium text-gray-900 mt-8">
+          Gracias por pasarte por este rincón digital. ¡Nos leemos en los comentarios o en 
+          <a href="/articulos" class="text-indigo-600 hover:underline">los artículos</a>!
+        </p>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,90 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry('blog', slug);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+function formatDate(date: Date): string {
+  const day = date.getDate();
+  const month = date.toLocaleDateString('es-ES', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day} ${month.charAt(0).toUpperCase() + month.slice(1)}, ${year}`;
+}
+
+const { Content } = await render(post);
+---
+
+<MainLayout 
+  title={post.data.title} 
+  siteName="blogger" 
+  description={post.data.description}
+>
+  <article class="pt-24 pb-16">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <!-- SECCIÓN DE CABECERA EN DOS COLUMNAS -->
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-center mb-14">
+        <!-- Columna de texto (izquierda) -->
+        <div class="flex-1 space-y-5">
+          <time class="inline-block text-indigo-600 font-medium text-sm uppercase tracking-wider">
+            {formatDate(post.data.pubDate)}
+          </time>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            {post.data.title}
+          </h1>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            {post.data.description}
+          </p>
+        </div>
+
+        <!-- Columna de imagen (derecha) -->
+        {post.data.banner && (
+          <div class="flex-1 w-full max-w-xl mx-auto md:mx-0">
+            <img 
+              src={post.data.banner} 
+              alt={post.data.title} 
+              class="w-full h-auto object-cover rounded-2xl shadow-lg aspect-[4/3]"
+              loading="lazy"
+            />
+          </div>
+        )}
+      </div>
+
+      <!-- CONTENIDO DEL ARTÍCULO (ancho máximo optimizado para lectura) -->
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg lg:prose-xl mx-auto max-w-none 
+                    prose-headings:text-gray-900 prose-a:text-indigo-600 
+                    prose-img:rounded-xl prose-img:shadow-md
+                    prose-pre:bg-gray-900 prose-pre:text-gray-100
+                    prose-code:text-indigo-600 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+                    prose-blockquote:border-indigo-500 prose-blockquote:text-gray-700
+                    prose-strong:text-gray-900">
+          <Content />
+        </div>
+      </div>
+
+      <!-- SEPARADOR Y VOLVER -->
+      <hr class="my-12 border-gray-200 max-w-4xl mx-auto" />
+      <div class="text-center">
+        <a href="/articulos" class="text-indigo-600 font-medium hover:text-indigo-800 transition inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Volver a todos los artículos
+        </a>
+      </div>
+    </div>
+  </article>
+</MainLayout>
